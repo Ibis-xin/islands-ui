@@ -1,0 +1,17 @@
+.disabled-form {
+    .v-label{
+        &.v-field-label {
+            visibility: hidden;
+        }
+    }
+    .v-field {
+        &.v-field--disabled {
+            opacity: 1;
+        }
+        .v-label {
+            &.v-field-label--floating {
+                visibility: visible;
+            }
+        }
+    }
+}

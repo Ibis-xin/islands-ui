@@ -1,0 +1,160 @@
+//color
+$color-primary:          #2761b9;
+$color-secondary:        #95a8c7;//文字
+$color-muted-100:        #f0f2f6;//背景
+$color-muted-150:        #e5e9f0;
+$color-muted-200:        #e2e8f3;//背景
+$color-muted-300:        #cdd7eb;//背景
+$color-muted-400:        #c7dbf1;
+$color-muted-500:        #a7b1cd;//文字
+$color-text:             #212529;//文字
+$color-blue:             #2761b9;
+$color-red:              #c50000;
+$color-gray-50:          rgba(190, 190, 190, 0.3);
+$color-gray-100:         #d6d6d6;
+$color-gray-200:         #999999;
+$color-gray-300:         #8d8d8d;
+$color-gray-400:         #747474;
+$color-gray-500:         #636363;
+$color-green:            #0d9737;
+$color-orange:           #d6890b; 
+$color-white-100:        rgba(255, 255, 255, .7);//背景
+$color-white-200:        white;//背景
+$color-black-100:        rgba(0, 0, 0, 0.4);//背景
+$color-black-200:        rgba(0, 0, 0, 0.8);//背景
+// ----------------------------------------------------
+
+//button
+$btn-hover:              #7595c9;
+$btn-hover-primary:      #0e4496;
+$btn-tertiary:           #D3E0F1;
+$btn-border-tertiary:    #c2d7f3;
+$btn-disabled-tertiary:  rgba(39, 97, 185, .5);
+$btn-hover-tertiary:     #bacdeb;
+$btn-tertiary-green:     #cae9d8;
+$btn-border-tertiary-green:   #bfe2cf;
+$btn-hover-tertiary-green: #bcd7c8;
+$btn-disabled-tertiary-green: rgba(13, 151, 55, .7);
+$btn-group-line:         #afcbe9;
+$btn-group-disabled-line:#b6d1ee;
+$btn-danger:             #f6d7d7;
+$btn-border-danger:      #efcccc;
+$btn-disabled-danger:    rgba(197, 0, 0, 0.5);
+$btn-hover-danger:       #e9b9b9;
+$btn-hover-danger-icon:  #c97575;
+$btn-warning:            #f3e5c9;
+$btn-border-warning:     #eddebf;
+$btn-disabled-warning:   rgba(197, 118, 0, 0.5);
+$btn-hover-warning:      #eed6b8;
+$btn-hover-warning-icon: #c9a775;
+// ----------------------------------------------------
+
+//tag
+$tag-color:              #d0d8eb;
+// ----------------------------------------------------
+
+//form
+$form-field-disabled:    #eef0f7;
+$border-field-disabled:  #dde0ee;
+$border-field:           #a9bed4;
+$border-field-focus:     #458ed6;
+// ----------------------------------------------------
+
+//grid
+$sort-bg:                rgba(149, 165, 194, .1);
+$grid-hover:             rgba(212, 220, 232, .6);
+$grid-alt:               rgba(234, 237, 242, .8);
+// ----------------------------------------------------
+
+//selection
+$selection-bg:           #AEAEAE;
+$code-selection-bg:      #dadada;
+// ----------------------------------------------------
+
+//scroll
+$scroll-bg:              #FAFAFA;
+$scroll-line:            #dfe7ef;
+$scroll-color:           #c1c1c1;
+// ----------------------------------------------------
+
+//font style
+//family
+$font-family-400:          'Roboto-Regular';
+$font-family-500:          'Roboto-Medium';
+$font-family-mono:         'RobotoMono-Regular';
+
+//size
+$font-size-xs:             .75rem;//12px
+$font-size-sm:             .8125rem;//13px
+$font-size-md:             .875rem;//14px
+$font-size-lg:             1rem;//16px
+$font-size-xl:             1.125rem;//18px
+$font-size-xxl:            1.25rem;//20px
+$font-size-xxxl:           1.4375rem;//23px
+
+//line-height
+$line-height-xs:           1.2;
+$line-height-sm:           1.5;
+$line-height-md:           1.125rem;
+
+//letter-space
+$letter-space-xs:          .5px;
+// ----------------------------------------------------
+
+//border
+$border-radius-xs:         .25rem;
+$border-radius-sm:         .3125rem;//5px
+$border-radius-md:         .625rem;//10px
+$border-radius-lg:         50%;
+$border-color-50:        #dae5f1;
+$border-color-100:       #d4dfeb;
+$border-color-200:       #d2d8e9;
+$border-color-300:       #e9eef4;
+$border-color-400:       #5784c9;
+$border-color-500:       #bfcde4;
+// ----------------------------------------------------
+
+//box-shadow
+$box-shadow:             rgba(18, 38, 63, .15);
+$box-shadow-field:       rgba(204, 213, 231, .8);
+// ----------------------------------------------------
+
+//message
+$message-bg-red:         #fceaea;
+$message-detail-bg-red:  #f2d9d9;
+$message-red-hover:      #c56d6d;
+$message-bg-blue:        #cee0fb;
+$message-bg-green:       #def4e7;
+$message-line-red:       #eebfbf;
+$message-line-blue:      #8ea7cd;
+// ----------------------------------------------------
+
+//status
+$focus:                 #b4cfff;
+$focus-danger:          #f5d1d1;
+$focus-warning:         #f5e7d1;
+$focus-green:           #cce8d8;
+$status-bg-blue:        #d5dced;
+$status-bg-red:         #f0d2d2;
+$status-bg-green:       #cee4cc;
+$status-bg-gray:        #e1e1e1;
+$status-bg-orange:      #f7eadc;
+// ----------------------------------------------------
+
+//vue-sidebar-menu
+$primary-color:          $color-primary;
+$base-bg:                $color-white-200;
+$toggle-btn-bg:          $color-primary;
+$mobile-item-color:      $color-white-200;
+$dropdown-bg:            $color-muted-200;
+$icon-bg:                transparent;
+$icon-active-bg:         $color-muted-200;
+$icon-open-bg:           transparent;
+$item-color:             $color-gray-500;
+$item-active-color:      $color-primary;
+$item-hover-color:       $color-primary;
+$item-hover-bg:          $color-muted-300;
+$item-active-line-color: $color-primary;
+$item-open-color:        $color-white-200;
+$item-font-size:         $font-size-md;
+// ----------------------------------------------------

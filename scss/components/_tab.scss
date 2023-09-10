@@ -1,0 +1,44 @@
+.v-tabs {
+  &.v-slide-group {
+    overflow: visible;
+  }
+  .v-btn {
+    margin: 0;
+  }
+  .v-slide-group__content {
+    .v-tab {
+      background-color: #dddddd;
+      border-radius: 0px;
+      &:first-child {
+        border-top-left-radius: 0.25rem;
+      }
+      &:last-child {
+        border-top-right-radius: 0.25rem;
+      }
+      &.v-slide-group-item--active {
+        background-color: #5f728b;
+        color: white;
+        &:last-child {
+          border-left: 0;
+        }
+      }
+    }
+    .v-tab__slider {
+      width: 0;
+    }
+  }
+}
+.v-card {
+  .v-slide-group__content {
+    flex: 1;
+    align-items: flex-end;
+    .v-tab {
+      &:first-child {
+        border-bottom-left-radius: 0.25rem;
+      }
+      &:last-child {
+        border-bottom-right-radius: 0.25rem;
+      }
+    }
+  }
+}

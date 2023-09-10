@@ -1,0 +1,13 @@
+//scrollbar
+@mixin scrollbar-track($bg-color, $border-lr) {
+    background-color: $bg-color;
+    border-left: $border-lr;
+    border-top: $border-lr;
+}
+@mixin scrollbar-thumb($bg-clip, $bg-color:$scroll-color, $border:4px solid transparent, $radius:$border-radius-md) {
+    background-color: $bg-color;
+    border: $border;
+    border-radius: $radius;
+    background-clip: $bg-clip;
+}
+// ----------------------------------------------------

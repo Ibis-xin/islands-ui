@@ -1,0 +1,60 @@
+//scrollbar style
+// ::-webkit-scrollbar {
+//     width: 1rem;
+//     height: 1rem;
+// }
+// ::-webkit-scrollbar-track {
+//     @include scrollbar-track($color-muted-100, 1px solid $border-color-100);
+// }
+// ::-webkit-scrollbar-corner {
+//     background-color: $color-muted-100;
+// }
+// ::-webkit-scrollbar-thumb {
+//     @include scrollbar-thumb(content-box);
+// }
+// ----------------------------------------------------
+
+//html
+html {
+    font-size: .875rem !important;
+}
+a {
+    text-decoration: none;
+}
+//font-style
+.font_style {
+    &--lg {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+    &--md {
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+    &--sm {
+        font-size: .75rem;
+        font-weight: 400;
+        line-height: 1.8;
+    }
+}
+.font-content-title {
+    font-size: .875rem;
+    font-weight: 400;
+    color: #636363;
+}
+// ----------------------------------------------------
+
+//font-color
+.font-blue {
+    color: rgb(27, 94, 182);
+}
+.font-gray {
+    color: rgb(106, 106, 106);
+}
+.font-dark {
+    color: #333333;
+    opacity: 1;
+}
+// ----------------------------------------------------
