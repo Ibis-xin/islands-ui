@@ -34,7 +34,12 @@
                 <v-checkbox v-model="item.privacy" value="public" :disabled="!edit"></v-checkbox>
               </td>
               <td>
-                <v-checkbox v-model="item.privacy" value="privacy" :disabled="!edit"></v-checkbox>
+                <v-checkbox
+                  v-model="item.privacy"
+                  value="privacy"
+                  :disabled="!edit"
+                  :indeterminate="item.privacy == null"
+                ></v-checkbox>
               </td>
               <td>
                 <v-checkbox v-model="item.privacy" value="friends" :disabled="!edit"></v-checkbox>
@@ -51,14 +56,14 @@
 import { ref } from 'vue'
 
 const edit = ref<boolean>(false)
-const privacy = ref<{ name: string; privacy: string }[]>([
+const privacy = ref<{ name: string; privacy?: string }[]>([
   {
     name: '創作者編號',
     privacy: 'public'
   },
   {
-    name: '加入時間',
-    privacy: 'privacy'
+    name: '加入時間'
+    // privacy: 'privacy'
   },
   {
     name: '好友數',
@@ -69,12 +74,12 @@ const privacy = ref<{ name: string; privacy: string }[]>([
     privacy: 'public'
   },
   {
-    name: '作品累計字數',
-    privacy: 'friends'
+    name: '作品累計字數'
+    // privacy: 'friends'
   },
   {
-    name: '作品累計圖片數',
-    privacy: 'friends'
+    name: '作品累計圖片數'
+    // privacy: 'friends'
   },
   {
     name: '累計發起活動數',
@@ -85,12 +90,12 @@ const privacy = ref<{ name: string; privacy: string }[]>([
     privacy: 'privacy'
   },
   {
-    name: '累計餐與活動數',
-    privacy: 'public'
+    name: '累計餐與活動數'
+    // privacy: 'public'
   },
   {
-    name: '累計餐與討論數',
-    privacy: 'public'
+    name: '累計餐與討論數'
+    // privacy: 'public'
   }
 ])
 </script>
