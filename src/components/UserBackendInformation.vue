@@ -113,17 +113,41 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-text-field
+            <v-select
               label="社群平台"
-              :readonly="!edit"
+              :disabled="!edit"
+              hide-details="auto"
+              variant="outlined"
+              density="compact"
+              chips
+              multiple
+              :items="items"
+            ></v-select>
+            <!-- <v-text-field
+              label="社群平台"
+              readonly
+              :disabled="!edit"
               hide-details="auto"
               variant="outlined"
               density="compact"
             >
-              <template v-if="edit" v-slot:append-inner>
-                <v-icon @click:append-inner="eye = !eye">mdi mdi-plus</v-icon>
+              <template v-slot:append-inner>
+                <v-btn icon hide-details="auto" density="compact">
+                  <v-icon> mdi-plus </v-icon>
+                  <v-dialog v-model="dialog" activator="parent" width="auto">
+                    <v-card>
+                      <v-card-text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </v-btn>
               </template>
-            </v-text-field>
+            </v-text-field> -->
           </v-col>
         </v-row>
       </v-col>
@@ -236,4 +260,6 @@ import { ref } from 'vue'
 const edit = ref<boolean>(false)
 const showpassword = ref<boolean>(false)
 const eye = ref<boolean>(false)
+
+const items = ref<string[]>(['Plurk', 'Twitter', 'Facebook'])
 </script>
