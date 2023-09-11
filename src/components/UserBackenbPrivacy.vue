@@ -1,20 +1,6 @@
 <template>
   <v-container>
     <v-row align="end">
-      <v-col cols="auto">
-        <v-img
-          class="bg-white"
-          width="120"
-          :aspect-ratio="1"
-          src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
-          cover
-        >
-        </v-img>
-      </v-col>
-      <v-col>
-        <h1>使用者名稱</h1>
-        @sinping328
-      </v-col>
       <v-spacer></v-spacer>
       <v-col cols="auto">
         <div v-if="!edit">
