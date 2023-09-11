@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="teal-darken-4" >
+    <v-app-bar color="teal-darken-4">
       <template v-slot:image>
         <v-img gradient="to top right, rgba(19,84,122,.8), rgba(128,208,199,.8)"></v-img>
       </template>
@@ -15,21 +15,51 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi mdi-magnify</v-icon>
-      </v-btn>
+      <v-tooltip location="bottom" text="新增作品">
+        <template v-slot:activator="{ props }">
+          <v-btn icon v-bind="props">
+            <v-icon>mdi mdi-pencil</v-icon>
+          </v-btn>
+        </template>
+      </v-tooltip>
 
-      <v-btn icon @click="router.push({ name: routeName.userBackend })"
-        ><v-icon>mdi mdi-book-heart</v-icon>
-      </v-btn>
+      <v-tooltip location="bottom" text="私訊">
+        <template v-slot:activator="{ props }">
+          <v-btn icon v-bind="props">
+            <v-badge color="#ef4c60" dot>
+              <v-icon>mdi mdi-message</v-icon>
+            </v-badge>
+          </v-btn>
+        </template>
+      </v-tooltip>
 
-      <v-btn icon @click="router.push({ name: routeName.userBackend })">
-        <v-icon>mdi mdi-forum</v-icon>
-      </v-btn>
+      <v-tooltip location="bottom" text="通知">
+        <template v-slot:activator="{ props }">
+          <v-btn icon v-bind="props">
+            <v-badge color="#ef4c60" dot>
+              <v-icon>mdi mdi-bell</v-icon>
+            </v-badge>
+          </v-btn>
+        </template>
+      </v-tooltip>
 
-      <v-btn icon @click="router.push({ name: routeName.userBackend })">
-        <v-icon>mdi mdi-account</v-icon>
-      </v-btn>
+      <v-menu>
+        <template v-slot:activator="{ props }">
+          <v-btn icon v-bind="props">
+            <v-icon> mdi mdi-account </v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item>
+            <v-list-item-title @click="router.push({ name: routeName.userBackend })">
+              個人資料
+            </v-list-item-title>
+            <v-list-item-title>隱私權管理</v-list-item-title>
+            <v-list-item-title>作品管理</v-list-item-title>
+            <v-list-item-title>社群管理</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
     <v-main>
       <RouterView />

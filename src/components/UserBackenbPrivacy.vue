@@ -22,22 +22,22 @@
           <thead>
             <tr>
               <th class="text-left">項目</th>
-              <th class="text-left">公開</th>
-              <th class="text-left">隱藏</th>
-              <th class="text-left">僅對好友</th>
+              <th class="text-left"><v-icon>mdi mdi-web</v-icon>公開</th>
+              <th class="text-left"><v-icon>mdi mdi-lock-outline</v-icon>隱藏</th>
+              <th class="text-left"><v-icon>mdi mdi-account-multiple</v-icon>僅對好友</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="item in privacy" :key="item.name">
               <td>{{ item.name }}</td>
               <td>
-                <v-checkbox v-model="item.privacy" value="public" :readonly="!edit"></v-checkbox>
+                <v-checkbox v-model="item.privacy" value="public" :disabled="!edit"></v-checkbox>
               </td>
               <td>
-                <v-checkbox v-model="item.privacy" value="privacy" :readonly="!edit"></v-checkbox>
+                <v-checkbox v-model="item.privacy" value="privacy" :disabled="!edit"></v-checkbox>
               </td>
               <td>
-                <v-checkbox v-model="item.privacy" value="friends" :readonly="!edit"></v-checkbox>
+                <v-checkbox v-model="item.privacy" value="friends" :disabled="!edit"></v-checkbox>
               </td>
             </tr>
           </tbody>
