@@ -13,7 +13,7 @@
       </v-col>
       <v-col>
         <v-row>
-          <v-col>
+          <v-col cols="12">
             <h1 v-if="!edit">使用者名稱</h1>
             <v-text-field
               v-if="edit"
@@ -23,10 +23,8 @@
               density="compact"
             ></v-text-field>
           </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <p>@account/1</p>
+          <v-col cols="12">
+            <p>@account</p>
           </v-col>
         </v-row>
       </v-col>
@@ -49,7 +47,9 @@
           <v-btn prepend-icon="mdi mdi-close" variant="outlined" size="small" @click="edit = false">
             取消
           </v-btn>
-          <v-btn prepend-icon="mdi mdi-content-save" size="small"> 保存 </v-btn>
+          <v-btn prepend-icon="mdi mdi-content-save" size="small" @click="changeInfo()">
+            保存
+          </v-btn>
         </div>
         <div v-if="showpassword">
           <v-btn
@@ -60,7 +60,9 @@
           >
             取消
           </v-btn>
-          <v-btn prepend-icon="mdi mdi-content-save" size="small"> 保存 </v-btn>
+          <v-btn prepend-icon="mdi mdi-content-save" size="small" @click="changePassword()">
+            保存
+          </v-btn>
         </div>
       </v-col>
     </v-row>
@@ -90,9 +92,7 @@
           </template>
         </v-text-field>
       </v-col>
-    </v-row>
-    <v-row v-if="!showpassword && edit">
-      <v-col>
+      <v-col cols="12" v-if="edit">
         <v-text-field
           label="新增社群平台"
           :readonly="!edit"
@@ -120,8 +120,6 @@
           </template>
         </v-text-field>
       </v-col>
-    </v-row>
-    <v-row v-if="!showpassword">
       <v-col cols="6" v-for="(item, index) in community" :key="index">
         <v-text-field
           :label="item.platform"
@@ -138,8 +136,6 @@
           </template>
         </v-text-field>
       </v-col>
-    </v-row>
-    <v-row v-if="!showpassword">
       <v-col cols="12">
         <v-textarea
           label="關於我"
@@ -173,99 +169,85 @@
         >
         </v-text-field>
       </v-col>
-    </v-row>
-    <v-row v-if="!showpassword && !edit">
-      <v-col cols="6">
-        <v-row>
-          <v-col>
-            <v-text-field
-              label="好友數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-          <v-col>
-            <v-text-field
-              label="粉絲數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <v-text-field
-              label="作品累計字數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-          <v-col>
-            <v-text-field
-              label="作品累計圖片數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-        </v-row>
+      <v-col cols="3">
+        <v-text-field
+          label="好友數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
       </v-col>
-      <v-col cols="6">
-        <v-row>
-          <v-col>
-            <v-text-field
-              label="累計發起活動數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-          <v-col>
-            <v-text-field
-              label="累計發起討論數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <v-text-field
-              label="累計參與活動數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-          <v-col>
-            <v-text-field
-              label="累計參與討論數"
-              readonly
-              hide-details="auto"
-              variant="outlined"
-              density="compact"
-            >
-            </v-text-field>
-          </v-col>
-        </v-row>
+      <v-col cols="3">
+        <v-text-field
+          label="粉絲數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="3">
+        <v-text-field
+          label="作品累計字數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="3">
+        <v-text-field
+          label="作品累計圖片數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="3">
+        <v-text-field
+          label="累計發起活動數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="3">
+        <v-text-field
+          label="累計發起討論數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="3">
+        <v-text-field
+          label="累計參與活動數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="3">
+        <v-text-field
+          label="累計參與討論數"
+          readonly
+          hide-details="auto"
+          variant="outlined"
+          density="compact"
+        >
+        </v-text-field>
       </v-col>
     </v-row>
   </v-container>
@@ -290,5 +272,13 @@ function addCommunity() {
 
 function delCommunity() {
   console.log('Delete Community')
+}
+
+function changeInfo() {
+  console.log('Change Information')
+}
+
+function changePassword() {
+  console.log('Change Password')
 }
 </script>
