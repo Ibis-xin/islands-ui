@@ -4,8 +4,6 @@
       <v-tabs v-model="tab">
         <v-tab value="0">個人資料</v-tab>
         <v-tab value="1">隱私權管理</v-tab>
-        <v-tab value="2">作品管理</v-tab>
-        <v-tab value="3">社群管理</v-tab>
       </v-tabs>
 
       <v-card-text>

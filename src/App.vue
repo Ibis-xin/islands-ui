@@ -49,16 +49,7 @@
             <v-icon> mdi mdi-account </v-icon>
           </v-btn>
         </template>
-        <v-list>
-          <v-list-item>
-            <v-list-item-title @click="router.push({ name: routeName.userBackend })">
-              個人資料
-            </v-list-item-title>
-            <v-list-item-title>隱私權管理</v-list-item-title>
-            <v-list-item-title>作品管理</v-list-item-title>
-            <v-list-item-title>社群管理</v-list-item-title>
-          </v-list-item>
-        </v-list>
+        <AppUserInfomation />
       </v-menu>
     </v-app-bar>
     <v-main>
@@ -76,8 +67,6 @@
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { routeName } from './router/routerValue'
 import { useRouter } from 'vue-router'
-
-const router = useRouter()
+import AppUserInfomation from '@/components/AppUserInfomation.vue'
 </script>

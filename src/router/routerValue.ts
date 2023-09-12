@@ -1,5 +1,6 @@
 export const routeName = {
   login: 'Login',
   home: 'Home',
-  userBackend: 'userBackend'
+  userBackend: 'userBackend',
+  creation: 'creation'
 }
