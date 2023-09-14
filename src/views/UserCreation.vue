@@ -16,7 +16,7 @@
                   <th class="text-left">類型</th>
                   <th class="text-left">權限</th>
                   <th class="text-left">發表時間</th>
-                  <th class="text-left">更新時間</th>
+                  <th class="text-left">最後更新時間</th>
                   <th class="text-left">功能</th>
                 </tr>
               </thead>
@@ -37,7 +37,7 @@
                   </td>
                   <td>
                     <v-btn @click="edit = true">編輯</v-btn>
-                    <v-btn>檢視</v-btn>
+                    <v-btn>{{ item.release ? '檢視' : '發布' }}</v-btn>
                   </td>
                 </tr>
               </tbody>
@@ -59,6 +59,14 @@
                   <v-btn icon>
                     <v-icon>mdi mdi-content-save</v-icon>
                     <v-tooltip activator="parent" location="bottom">保存</v-tooltip>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>mdi mdi-upload</v-icon>
+                    <v-tooltip activator="parent" location="bottom">發布</v-tooltip>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>mdi mdi-update</v-icon>
+                    <v-tooltip activator="parent" location="bottom">發布更新</v-tooltip>
                   </v-btn>
                   <v-btn icon @click="cancel()">
                     <v-icon>mdi mdi-close</v-icon>
@@ -166,6 +174,7 @@ const creation = ref<
     privacy: string
     createTime: string
     updateTime: string
+    release: boolean
   }[]
 >([
   {
@@ -173,14 +182,16 @@ const creation = ref<
     category: '新詩',
     privacy: '公開',
     createTime: '2023/09/12',
-    updateTime: '2023/09/12'
+    updateTime: '2023/09/12',
+    release: true
   },
   {
     name: '喜羊羊與灰太狼',
     category: '繪本',
     privacy: '僅限好友',
     createTime: '2023/09/12',
-    updateTime: '2023/09/12'
+    updateTime: '2023/09/12',
+    release: false
   }
 ])
 
