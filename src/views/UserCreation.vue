@@ -44,46 +44,13 @@
             </v-table>
           </v-col>
           <v-col v-if="edit">
-            <v-row>
-              <v-col cols="12">
-                <v-toolbar>
-                  <v-btn icon @click="openCreation()">
-                    <v-icon>
-                      {{ open ? 'mdi mdi-arrow-left' : 'mdi mdi-arrow-top-left-bottom-right' }}
-                    </v-icon>
-                    <v-tooltip activator="parent" location="bottom">
-                      {{ open ? '返回側欄模式' : '展開' }}
-                    </v-tooltip>
-                  </v-btn>
-                  <v-spacer></v-spacer>
-                  <v-btn icon>
-                    <v-icon>mdi mdi-content-save</v-icon>
-                    <v-tooltip activator="parent" location="bottom">保存</v-tooltip>
-                  </v-btn>
-                  <v-btn icon>
-                    <v-icon>mdi mdi-upload</v-icon>
-                    <v-tooltip activator="parent" location="bottom">發布</v-tooltip>
-                  </v-btn>
-                  <v-btn icon>
-                    <v-icon>mdi mdi-update</v-icon>
-                    <v-tooltip activator="parent" location="bottom">更新</v-tooltip>
-                  </v-btn>
-                  <v-btn icon @click="cancel()">
-                    <v-icon>mdi mdi-close</v-icon>
-                    <v-tooltip activator="parent" location="bottom">取消</v-tooltip>
-                  </v-btn>
-                </v-toolbar>
-              </v-col>
-            </v-row>
-            <UserCreationEditer :info="info">
-              <template v-slot:info>
-                <v-btn @click="info = !info">
-                  <v-icon>
-                    {{ info ? 'mdi mdi-arrow-up-drop-circle' : 'mdi mdi-arrow-down-drop-circle' }}
-                  </v-icon>
-                  {{ info ? '隱藏作品資訊' : '顯示作品資訊' }}
-                </v-btn>
-              </template>
+            <UserCreationEditer
+              :open="open"
+              :info="info"
+              @open-creation="openCreation()"
+              @open-info="openInfo()"
+              @cancel="cancel()"
+            >
             </UserCreationEditer>
           </v-col>
         </v-row>
@@ -136,6 +103,10 @@ function openCreation() {
   } else {
     info.value = true
   }
+}
+
+function openInfo() {
+  info.value = !info.value
 }
 
 function cancel() {
