@@ -21,7 +21,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in creation" :key="item.name">
+                <tr v-for="item in article.articles" :key="item.name">
                   <td>{{ item.name }}</td>
                   <td>
                     {{ item.category }}
@@ -62,38 +62,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import UserCreationEditer from '@/components/UserCreationEditer.vue'
+import { useArticleStore } from '@/stores/article'
 
 const edit = ref<boolean>(false)
 const open = ref<boolean>(false)
 const info = ref<boolean>(true)
 
-const creation = ref<
-  {
-    name: string
-    category: string
-    privacy: string
-    createTime: string
-    updateTime: string
-    release: boolean
-  }[]
->([
-  {
-    name: '最偉大的作品',
-    category: '新詩',
-    privacy: '公開',
-    createTime: '2023/09/12',
-    updateTime: '2023/09/12',
-    release: true
-  },
-  {
-    name: '喜羊羊與灰太狼',
-    category: '繪本',
-    privacy: '僅限好友',
-    createTime: '2023/09/12',
-    updateTime: '2023/09/12',
-    release: false
-  }
-])
+const article = useArticleStore()
 
 function openCreation() {
   open.value = !open.value

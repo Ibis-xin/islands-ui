@@ -18,6 +18,7 @@ const router = createRouter({
     {
       path: '/creation',
       name: routeName.creation,
+      props: true,
       component: () => import('../views/UserCreation.vue')
     }
   ]

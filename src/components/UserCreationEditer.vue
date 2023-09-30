@@ -71,7 +71,10 @@
 import UserCreationinfomation from '@/components/UserCreationinfomation.vue'
 import { ref } from 'vue'
 
-const props = defineProps<{ open: boolean; info: boolean }>()
+const props = defineProps<{
+  open: boolean
+  info: boolean
+}>()
 
 const page = ref<number>(1)
 </script>
