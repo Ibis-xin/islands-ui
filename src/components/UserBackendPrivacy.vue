@@ -9,10 +9,10 @@
           </v-btn>
         </div>
         <div v-if="edit">
-          <v-btn prepend-icon="mdi mdi-close" variant="outlined" size="small" @click="edit = false">
+          <v-btn prepend-icon="mdi mdi-close" variant="text" size="small" @click="edit = false">
             取消
           </v-btn>
-          <v-btn prepend-icon="mdi mdi-content-save" size="small"> 保存 </v-btn>
+          <v-btn prepend-icon="mdi mdi-content-save" variant="outlined" size="small"> 保存 </v-btn>
         </div>
       </v-col>
     </v-row>

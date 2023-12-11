@@ -44,39 +44,40 @@
           </v-btn>
         </div>
         <div v-if="edit">
-          <v-btn prepend-icon="mdi mdi-close" variant="outlined" size="small" @click="edit = false">
+          <v-btn prepend-icon="mdi mdi-close" variant="text" size="small" @click="edit = false">
             取消
           </v-btn>
-          <v-btn prepend-icon="mdi mdi-content-save" size="small" @click="changeInfo()">
+          <v-btn
+            prepend-icon="mdi mdi-content-save"
+            variant="outlined"
+            size="small"
+            @click="changeInfo()"
+          >
             保存
           </v-btn>
         </div>
         <div v-if="showpassword">
           <v-btn
             prepend-icon="mdi mdi-close"
-            variant="outlined"
+            variant="text"
             size="small"
             @click="showpassword = false"
           >
             取消
           </v-btn>
-          <v-btn prepend-icon="mdi mdi-content-save" size="small" @click="changePassword()">
+          <v-btn
+            prepend-icon="mdi mdi-content-save"
+            variant="outlined"
+            size="small"
+            @click="changePassword()"
+          >
             保存
           </v-btn>
         </div>
       </v-col>
     </v-row>
 
-    <v-row v-if="showpassword">
-      <v-col cols="6">
-        <v-text-field label="變更密碼" hide-details="auto" variant="outlined" density="compact">
-        </v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field label="再次確認密碼" hide-details="auto" variant="outlined" density="compact">
-        </v-text-field>
-      </v-col>
-    </v-row>
+    <UserBackendPassword v-if="showpassword"></UserBackendPassword>
 
     <v-row v-if="!showpassword">
       <v-col cols="12">
@@ -92,6 +93,7 @@
           </template>
         </v-text-field>
       </v-col>
+
       <v-col cols="12" v-if="edit">
         <v-text-field
           label="新增社群平台"
@@ -132,7 +134,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </template>
           <template v-if="edit" v-slot:append>
-            <v-icon @click="delCommunity()">mdi mdi-minus</v-icon>
+            <v-icon @click="delCommunity()">mdi mdi-trash-can-outline</v-icon>
           </template>
         </v-text-field>
       </v-col>
@@ -146,108 +148,9 @@
           density="compact"
         ></v-textarea>
       </v-col>
-    </v-row>
-
-    <v-row v-if="!showpassword && !edit">
-      <v-col cols="6">
-        <v-text-field
-          label="加入時間"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="上次登入時間"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="好友數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="粉絲數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="作品累計字數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="作品累計圖片數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="累計發起活動數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="累計發起討論數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="累計參與活動數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
-      </v-col>
-      <v-col cols="3">
-        <v-text-field
-          label="累計參與討論數"
-          readonly
-          hide-details="auto"
-          variant="outlined"
-          density="compact"
-        >
-        </v-text-field>
+      <v-col cols="12">
+        <div>加入時間：2023/12/11</div>
+        <div>上次登入時間：2023/12/11</div>
       </v-col>
     </v-row>
   </v-container>
@@ -255,6 +158,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+import UserBackendPassword from './UserBackendPassword.vue'
 
 const edit = ref<boolean>(false)
 const showpassword = ref<boolean>(false)

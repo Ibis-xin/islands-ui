@@ -1,0 +1,42 @@
+<template>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-card variant="outlined">
+          <div>
+            <label>好友數：</label>
+            <span>36</span>
+          </div>
+          <div>
+            <label>粉絲數：</label>
+            <span>155</span>
+          </div>
+          <div>
+            <label>作品累計字數：</label>
+            <span>35,235</span>
+          </div>
+          <div>
+            <label>作品累計圖片數：</label>
+            <span>54</span>
+          </div>
+          <div>
+            <label>累計發起活動數：</label>
+            <span>2</span>
+          </div>
+          <div>
+            <label>累計發起討論數：</label>
+            <span>11</span>
+          </div>
+          <div>
+            <label>累計參與活動數：</label>
+            <span>7</span>
+          </div>
+          <div>
+            <label>累計參與討論數：</label>
+            <span>85</span>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>

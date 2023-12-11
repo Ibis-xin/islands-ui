@@ -11,6 +11,10 @@
               {{ props.open ? '返回側欄模式' : '展開' }}
             </v-tooltip>
           </v-btn>
+          <v-btn icon @click="$emit('openCreation')">
+            <v-icon> mdi mdi-open-in-new </v-icon>
+            <v-tooltip activator="parent" location="bottom">在新分頁開啟</v-tooltip>
+          </v-btn>
           <v-spacer></v-spacer>
           <v-btn icon>
             <v-icon>mdi mdi-content-save</v-icon>

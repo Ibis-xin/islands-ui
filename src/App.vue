@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="teal-darken-4">
-      <template v-slot:image>
-        <v-img gradient="to top right, rgba(19,84,122,.8), rgba(128,208,199,.8)"></v-img>
-      </template>
-
+    <v-app-bar>
       <template v-slot:prepend>
         <v-app-bar-nav-icon icon="mdi mdi-island"></v-app-bar-nav-icon>
       </template>
@@ -17,7 +13,7 @@
 
       <v-tooltip location="bottom" text="新增作品">
         <template v-slot:activator="{ props }">
-          <v-btn icon v-bind="props">
+          <v-btn icon v-bind="props" @click="router.push({ name: routeName.creation })">
             <v-icon>mdi mdi-pencil</v-icon>
           </v-btn>
         </template>
@@ -68,4 +64,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import AppUserInfomation from '@/components/AppUserInfomation.vue'
+import { routeName } from '@/router/routerValue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 </script>
